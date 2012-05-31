@@ -10,10 +10,10 @@ main.js is the initiator of the app and it'll give you a structure to build your
 
 You can get more helpful information by reading through the docco files for the main scripts: 
 
-- [http://makesites.org/barebones-backbone/docs/controllers.html](controllers.js)
-- [http://makesites.org/barebones-backbone/docs/models.html](models.js)
-- [http://makesites.org/barebones-backbone/docs/views.html](views.js)
-- [http://makesites.org/barebones-backbone/docs/main.html](main.js)
+- [controllers.js](http://makesites.org/barebones-backbone/docs/controllers.html)
+- [models.js](http://makesites.org/barebones-backbone/docs/models.html)
+- [views.js](http://makesites.org/barebones-backbone/docs/views.html)
+- [main.js](http://makesites.org/barebones-backbone/docs/main.html)
 
 
 
