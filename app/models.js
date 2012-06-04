@@ -10,7 +10,7 @@
 		// - check if the app is online
 		isOnline: function(){
 			return ( !_.isUndefined( app ) ) ? app.state.online : true;
-		},
+		}
 	});
 	
   	Collection = Backbone.Collection.extend({
@@ -69,9 +69,8 @@
 		}
 	});
 	
-	// **Models**
+	// **Models**: Add as many here as needed...
 	
-  	// **Reply**: The the base model for all replies. 
 	APP.Models.Main = Model.extend({
 		defaults: { }, 
 		initialize: function(){
