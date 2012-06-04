@@ -42,4 +42,12 @@
 		}
 	});
 	
+	// Section views (duplicate as needed...)
+	APP.Views.Section = Backbone.View.extend({
+		el: "", 
+		events: {}, 
+		initialize: function(model, options){},
+		render: function(){}
+	});
+	
 })(this._, this.Backbone);
