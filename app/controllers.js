@@ -29,8 +29,8 @@
 			// do something...
 			//APP.Collections.Main
 			//APP.Views.Main
-		}, 
+		}
 		
 	});
 
-})
+})();
