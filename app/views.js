@@ -4,14 +4,20 @@
 		interpolate : /\{\{(.+?)\}\}/g
 	};
 	
-	/* Main layout */
-	APP.Views.Main = Backbone.View.extend({
-		// the template file that's used as a resource for the markup
-		el: "#main", 
+	View =  Backbone.View.extend({
 		// events
 		events: {
 			"click a[rel='external']" : "clickExternal",
-		}, 
+		},
+		clickExternal: function(e){
+			window.open($(e.target).attr("href"), '_blank'); return false; 
+		}
+	});
+	
+	/* Main layout */
+	APP.Views.Main = View.extend({
+		// the template file that's used as a resource for the markup
+		el: "#main", 
 		initialize: function(model, options){ 
 			
 			// every function that uses 'this' as the current object should be in here
@@ -36,14 +42,11 @@
 		// Update the view when a new model is sent
 		update: function( model, options ){
 			
-		}, 
-		clickExternal: function(e){
-			window.open($(e.target).attr("href"), '_blank'); return false; 
 		}
 	});
 	
 	// Section views (duplicate as needed...)
-	APP.Views.Section = Backbone.View.extend({
+	APP.Views.Section = View.extend({
 		el: "", 
 		events: {}, 
 		initialize: function(model, options){},
