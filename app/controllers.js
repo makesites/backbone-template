@@ -23,7 +23,7 @@
 			if(typeof(APP.Routers[router]) == "function") break;
 		}
 		// call the router or fallback to the default
-		var controller = (router) ? new APP.Routers[router]() : new APP.Routers.Default();
+		var controller = (router && APP.Routers[router]) ? new APP.Routers[router]() : new APP.Routers.Default();
 	}
 	
 	// Routers
