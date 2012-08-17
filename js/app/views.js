@@ -1,18 +1,4 @@
 (function(_, Backbone) {
-	// this is to enable {{moustache}} syntax to simple _.template() calls
-	_.templateSettings = {
-		interpolate : /\{\{(.+?)\}\}/g
-	};
-	
-	View =  Backbone.View.extend({
-		// events
-		events: {
-			"click a[rel='external']" : "clickExternal",
-		},
-		clickExternal: function(e){
-			window.open($(e.target).attr("href"), '_blank'); return false; 
-		}
-	});
 	
 	/* Main layout */
 	APP.Views.Main = View.extend({

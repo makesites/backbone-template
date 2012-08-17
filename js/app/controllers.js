@@ -1,31 +1,5 @@
 (function() {
 
-	// Namespace definition
-	APP = {
-		init : function(){},
-		Routers : {},
-		Collections: {},
-		Models: {},
-		Views: {}
-	}
-	
-	// App contructor
-	APP.init = function(){
-		var router = false;
-		// check URIs
-		var path = window.location.pathname.split( '/' );
-		// find a router based on the path
-		for( i in path ){
-			// discart the first item if it's empty
-			if( path[i] === "") continue;
-			router = (path[i].charAt(0).toUpperCase() + path[i].slice(1));
-			// stop if we've found a router
-			if(typeof(APP.Routers[router]) == "function") break;
-		}
-		// call the router or fallback to the default
-		var controller = (router && APP.Routers[router]) ? new APP.Routers[router]() : new APP.Routers.Default();
-	}
-	
 	// Routers
 	APP.Routers.Default = Backbone.Router.extend({
 		data: {}, 
