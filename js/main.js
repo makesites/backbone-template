@@ -4,7 +4,7 @@ var app;
 $(function() {
 
 	// initialize APP
-	app = new APP.init;
+	app = new APP();
 	window.app = app;
 	// start backbone history
 	Backbone.history.start();

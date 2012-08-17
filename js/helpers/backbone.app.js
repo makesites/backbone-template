@@ -1,16 +1,7 @@
 (function(_, Backbone) {
 	
-	// Namespace definition
-	APP = {
-		init : function(){},
-		Routers : {},
-		Collections: {},
-		Models: {},
-		Views: {}
-	}
-	
 	// App contructor
-	APP.init = function(){
+	APP = function(){
 		var router = false;
 		// check URIs
 		var path = window.location.pathname.split( '/' );
@@ -26,6 +17,11 @@
 		var controller = (router && APP.Routers[router]) ? new APP.Routers[router]() : new APP.Routers.Default();
 	}
 	
+	// Namespace definition
+	APP.Models = {};
+	APP.Routers = {};
+	APP.Collections = {};
+	APP.Views = {};
 	
   	// **Main constructors**
 	Model = Backbone.Model.extend({

@@ -18,6 +18,7 @@
 			browser: function(){ return ( $.browser.safari && /chrome/.test(navigator.userAgent.toLowerCase()) ) ? 'chrome' : 'other' }, 
 		},
 		index: function(){
+			console.log("I'm in index");
 			// do something...
 			//APP.Collections.Main
 			//APP.Views.Main
