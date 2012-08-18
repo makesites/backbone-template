@@ -15,6 +15,8 @@
 		}
 		// call the router or fallback to the default
 		var controller = (router && APP.Routers[router]) ? new APP.Routers[router]() : new APP.Routers.Default();
+		// return controller so it's accessible through the app global
+		return controller;
 	}
 	
 	// Namespace definition
