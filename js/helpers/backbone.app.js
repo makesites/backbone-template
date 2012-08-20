@@ -114,6 +114,31 @@
 		}
 	});
 	
+	Template = Backbone.Model.extend({
+		initialize: function(){
+			_.bindAll(this, 'fetch','parse'); 
+			this.fetch();
+		}, 
+		fetch: function(){
+			// this can be replaced with a backbone method...
+			$.get(this.url, this.parse);
+		}, 
+		parse: function(data){
+			var self = this;
+			$(data).filter("script").each(function(){
+				// filter only scripts defined as template
+				var el = $(this);
+				if(el.attr("type").indexOf("template") >= 0){ 
+					// convention: the id sets the key for the tmeplate
+					self.set( el.attr("id"), el.html() );
+				}
+			});
+			this.trigger("reset");
+			return data;
+		}
+	});
+	
+	
 	// Helpers
 	// this is to enable {{moustache}} syntax to simple _.template() calls
 	_.templateSettings = {
