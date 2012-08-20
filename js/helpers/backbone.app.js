@@ -39,7 +39,16 @@
 	});
 	
   	Collection = Backbone.Collection.extend({
-		// variables
+		// initialization (if not overriden)
+		initialize: function(models, options){
+			// save options for later
+			this.options = options || {};
+			// auto-fetch if no models are passed
+			if( _.isNull(models) ){ 
+				this.fetch();
+			}
+		}, 
+		// DEPRECATED variables
 		attributes: {
 		}, 
 		// A custom add function that can prevent models with duplicate IDs
