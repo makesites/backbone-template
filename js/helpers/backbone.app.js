@@ -24,6 +24,7 @@
 	APP.Routers = {};
 	APP.Collections = {};
 	APP.Views = {};
+	APP.Templates = {};
 	
   	// **Main constructors**
 	Model = Backbone.Model.extend({
