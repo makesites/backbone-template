@@ -36,6 +36,34 @@
 		// - check if the app is online
 		isOnline: function(){
 			return ( !_.isUndefined( app ) ) ? app.state.online : true;
+		}, 
+		// FIX: override sync to support DELETE method (411 error on NGINX)
+		// issue: http://serverfault.com/q/396020
+		sync : function(method, model, options) {
+			var methodMap = { 'create': 'POST', 'update': 'PUT', 'delete': 'DELETE', 'read':   'GET' };
+			var type = methodMap[method];
+			options || (options = {});
+			var params = {type: type, dataType: 'json', data: {}};
+			
+			if (!options.url) {
+			  params.url = this.getValue(model, 'url') || urlError();
+			}
+			
+			if (!options.data && model && (method == 'create' || method == 'update')) {
+			  params.contentType = 'application/json';
+			  params.data = JSON.stringify(model.toJSON());
+			}
+			
+			if (params.type !== 'GET' && !Backbone.emulateJSON) {
+			  params.processData = false;
+			}
+			
+			return $.ajax(_.extend(params, options));
+		},
+		// Helper - DELETE if the sync is not needed any more...
+		getValue : function(object, prop) {
+			if (!(object && object[prop])) return null;
+			return _.isFunction(object[prop]) ? object[prop]() : object[prop];
 		}
 	});
 	
