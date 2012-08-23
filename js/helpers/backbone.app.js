@@ -91,7 +91,12 @@
 			models = _.isArray(models) ? models.slice() : [models];
 			
 			_.each(models, function(model) {
-				if ( _.isUndefined( this.get(model.id) ) ) {
+				
+				if ( _.isUndefined(model.id) ) {
+					// no id = no way to verify the identity
+					// we have to assume this is an new model
+					modelsToAdd["add_model_"+ Math.random() ] = model;
+				} else if ( _.isUndefined( this.get(model.id) ) ) {
 					// add them this way to avoid duplicates on the same set
 					modelsToAdd[model.id] = model;
 				} else {
