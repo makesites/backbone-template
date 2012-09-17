@@ -140,11 +140,25 @@
 	View =  Backbone.View.extend({
 		// events
 		events: {
-			"click a[rel='external']" : "clickExternal",
+			"click a[rel='external']" : "clickExternal"
 		},
 		clickExternal: function(e){
 			window.open($(e.target).attr("href"), '_blank'); return false; 
 		}
+	});
+	
+	Router = Backbone.Router.extend({
+		// Save app state in a seperate object
+		state: {
+			fullscreen: false, 
+			online: navigator.onLine,
+			browser: function(){ 
+							if( $.browser.safari && /chrome/.test(navigator.userAgent.toLowerCase()) ) return 'chrome';
+							if(/(iPhone|iPod).*OS 5.*AppleWebKit.*Mobile.*Safari/.test(navigator.userAgent) ) return 'ios';
+							return 'other';
+						}
+		}
+		
 	});
 	
 	Template = Backbone.Model.extend({

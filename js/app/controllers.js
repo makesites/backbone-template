@@ -1,7 +1,7 @@
 (function() {
 
 	// Routers
-	APP.Routers.Default = Backbone.Router.extend({
+	APP.Routers.Default = Router.extend({
 		data: {}, 
 		initialize: function() {
 			// every function that uses 'this' as the current object should be in here
@@ -10,13 +10,7 @@
 		}, 
 		routes: {
 			"": "index",
-		},
-		// Save app state in a seperate object
-		state: {
-			fullscreen: false, 
-			online: navigator.onLine,
-			browser: function(){ return ( $.browser.safari && /chrome/.test(navigator.userAgent.toLowerCase()) ) ? 'chrome' : 'other' }, 
-		},
+		}, 
 		index: function(){
 			console.log("I'm in index");
 			// do something...
