@@ -142,6 +142,35 @@
 		events: {
 			"click a[rel='external']" : "clickExternal"
 		},
+		initialize: function(){
+			_.bindAll(this, 'render'); 
+			// find the data
+			this.data = this.model || this.collection;
+			//
+			//_.extend({name : 'moe'}, {age : 50});
+			this.options.type || (this.options.type = "default");
+			// compile
+			var html = this.options.html || null;
+			var options = {};
+			if(this.options.url) options.url = this.options.url;
+			this.template = new Template(html, options);
+			this.template.bind("loaded", this.render);
+			// add listeners
+			this.data.bind("change", this.render);
+			this.data.bind("reset", this.render);
+			this.data.bind("add", this.render);
+			this.data.bind("remove", this.render);
+			// initial render
+			this.render();
+		},
+		render: function(){
+			var type = this.options.type;
+			var template = this.template.get(type);
+			if( !_.isUndefined( template ) ) { 
+				var html = template( this.data.toJSON() );
+				$(this.el).html( html );
+			}
+		}, 
 		clickExternal: function(e){
 			window.open($(e.target).attr("href"), '_blank'); return false; 
 		}
@@ -162,9 +191,16 @@
 	});
 	
 	Template = Backbone.Model.extend({
-		initialize: function(){
+		initialize: function(html, options){
 			_.bindAll(this, 'fetch','parse'); 
-			this.fetch();
+			if( !_.isEmpty(html) ){
+				this.set( "default", this.compile( html ) );
+				this.trigger("loaded");
+			}
+			if( options.url ){
+				this.url = options.url;
+				this.fetch();
+			}
 		}, 
 		fetch: function(){
 			// this can be replaced with a backbone method...
@@ -172,16 +208,24 @@
 		}, 
 		parse: function(data){
 			var self = this;
-			$(data).filter("script").each(function(){
-				// filter only scripts defined as template
-				var el = $(this);
-				if(el.attr("type").indexOf("template") >= 0){ 
-					// convention: the id sets the key for the tmeplate
-					self.set( el.attr("id"), el.html() );
-				}
-			});
-			this.trigger("reset");
-			return data;
+			var scripts = $(data).filter("script");
+			// check if there are script tags 
+			if( !scripts.length ){
+				// save everything in the default attr
+				this.set( "default", self.compile( data ) );
+			} else { 
+				// loop through the scripts
+				scripts.each(function(){
+					// filter only scripts defined as template
+					var el = $(this);
+					if(el.attr("type").indexOf("template") >= 0){ 
+						// convention: the id sets the key for the tmeplate
+						self.set( el.attr("id"), self.compile( el.html() ) );
+					}
+				});
+			}
+			this.trigger("loaded");
+			//return data;
 		}
 	});
 	
