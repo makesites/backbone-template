@@ -19,7 +19,7 @@ You can get more helpful information by reading through the docco files for the 
 
 ### Authors and Contributors
 
-Created by Makis Tracend ( [https://github.com/tracend](@tracend) ), originally used for oreply.net, then distributed freely through [http://makesites.org/](makesites.org)
+Created by Makis Tracend ( [https://github.com/tracend](@tracend) ), originally used for [OReply](http://oreply.net/), then distributed freely through [makesites.org](http://makesites.org/)
 
 
 ### License
