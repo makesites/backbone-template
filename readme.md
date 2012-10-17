@@ -1,5 +1,9 @@
-# Bare-bones Backbone
-A template project for backbone.js with the bare essentials to get you going 
+# Backbone Template
+A template project for backbone.js with the bare scaffolding to get you going 
+
+### Dependencies
+
+* [backbone.app](http://github.com/makesites/backbone-app)
 
 
 ### How to use 
