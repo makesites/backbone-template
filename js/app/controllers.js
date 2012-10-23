@@ -6,6 +6,8 @@
 		initialize: function() {
 			// every function that uses 'this' as the current object should be in here
 			_.bindAll(this, 'index'); 
+			// uncomment this if using Google Analytics
+			// this.bind('all', this._trackPageview);
 			
 		}, 
 		routes: {
