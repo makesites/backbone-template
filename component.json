@@ -1,6 +1,6 @@
 {
-  "name": "Backbone Template",
-  "version": "0.5.0",
+  "name": "backbone-template",
+  "version": "0.5.1",
   "main": ["./js/"],
   "dependencies": {
 	    "backbone.app" : "~0.5.0"
