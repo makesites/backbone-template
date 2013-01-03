@@ -1,7 +1,7 @@
 (function(_, Backbone) {
 	
 	/* Main layout */
-	APP.Views.Main = View.extend({
+	APP.Views.Main = APP.View.extend({
 		// the template file that's used as a resource for the markup
 		el: "#main", 
 		initialize: function(model, options){ 
@@ -32,7 +32,7 @@
 	});
 	
 	// Section views (duplicate as needed...)
-	APP.Views.Section = View.extend({
+	APP.Views.Section = APP.View.extend({
 		el: "", 
 		events: {}, 
 		initialize: function(model, options){},
