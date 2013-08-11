@@ -1,7 +1,7 @@
 {
 	"name": "backbone-template",
 	"private": true,
-	"version": "0.6.0",
+	"version": "0.7.0",
 	"description": "Template scaffolding for Backbone.APP",
 	"author": "makesites",
 	"contributors": [

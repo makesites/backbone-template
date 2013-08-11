@@ -1,6 +1,6 @@
 {
 	"name": "backbone-template",
-	"version": "0.5.5",
+	"version": "0.7.0",
 	"main": ["./js/"],
 	"dependencies": {
 		"backbone.app" : "0.8.x"
