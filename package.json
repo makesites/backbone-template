@@ -1,0 +1,32 @@
+{
+	"name": "backbone-template",
+	"private": true,
+	"version": "0.6.0",
+	"description": "Template scaffolding for Backbone.APP",
+	"author": "makesites",
+	"contributors": [
+		{ "name": "Makis Tracend", "email": "makis@makesit.es" }
+	],
+	"homepage": "https://github.com/makesites/backbone-template",
+	"keywords": ["backbone", "template", "backbone-app"],
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/makesites/backbone-template.git"
+	},
+	"bugs": {
+		"url": "https://github.com/makesites/backbone-template/issues"
+	},
+	"licenses": [
+		{
+			"type": "MIT license",
+			"url": "http://makesites.org/licenses/MIT"
+		}
+	],
+	"engine" : {
+		"node" : "0.8.x"
+	},
+	"main": "grunt",
+	"dependencies" : {
+		"grunt-docco" : "0.x"
+	}
+}
