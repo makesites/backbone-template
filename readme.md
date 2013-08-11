@@ -1,31 +1,33 @@
 # Backbone Template
-A template project for backbone.js with the bare scaffolding to get you going 
+
+A template project for backbone.js with the bare scaffolding to get you going
 
 ### Dependencies
 
 * [backbone.app](http://github.com/makesites/backbone-app)
 
 
-### How to use 
+### How to use
 
-Copy the contents of this repo in your JavaScript folder and load the files as dependencies of your web page (using your favorite js loader) 
+Copy the contents of this repo in your JavaScript folder and load the files as dependencies of your web page (using your favorite js loader)
 
 main.js is the initiator of the app and it'll give you a structure to build your views around and a global variable "app" you might want to make requests against...
 
-You can get more helpful information by reading through the docco files for the main scripts: 
+You can get more helpful information by reading through the docco files for the main scripts:
 
-- [controllers.js](http://makesites.org/barebones-backbone/docs/controllers.html)
-- [models.js](http://makesites.org/barebones-backbone/docs/models.html)
-- [views.js](http://makesites.org/barebones-backbone/docs/views.html)
-- [main.js](http://makesites.org/barebones-backbone/docs/main.html)
-
-
-
-### Authors and Contributors
-
-Concepted by Makis Tracend ( [https://github.com/tracend](@tracend) ), originally created for [OReply](http://oreply.net/), then distributed freely as part of [makesites.org](http://makesites.org/)
+- [controllers.js](http://rawgithub.com/makesites/backbone-template/master/docs/controllers.html)
+- [models.js](http://rawgithub.com/makesites/backbone-template/master/docs/models.html)
+- [views.js](http://rawgithub.com/makesites/backbone-template/master/docs/views.html)
+- [main.js](http://rawgithub.com/makesites/backbone-template/master/docs/main.html)
 
 
-### License
 
-Released under the MIT license...
+### Credits
+
+Created by Makis Tracend ( [https://github.com/tracend](@tracend) ),
+
+Originally created for [OReply](http://oreply.net/),
+
+Distributed through [Makesites](http://makesites.org/)
+
+Released under the [MIT license](http://makesites.org/licenses/MIT)
