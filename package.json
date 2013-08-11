@@ -27,6 +27,7 @@
 	},
 	"main": "grunt",
 	"dependencies" : {
+		"grunt" : "0.4.x",
 		"grunt-docco" : "0.x"
 	}
 }
