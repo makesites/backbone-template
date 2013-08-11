@@ -1,12 +1,12 @@
 (function(_, Backbone) {
-  
+
 	// **Models**: Add as many here as needed...
-	
+
 	APP.Models.Main = APP.Model.extend({
-		defaults: { }, 
+		defaults: { },
 		initialize: function(){
 			// call cache on every state change
-			
+
 		}
 	});
 
