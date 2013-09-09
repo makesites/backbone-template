@@ -24,7 +24,7 @@ You can get more helpful information by reading through the docco files for the 
 
 ### Credits
 
-Created by Makis Tracend ( [https://github.com/tracend](@tracend) ),
+Created by Makis Tracend ( [@tracend](https://github.com/tracend) ),
 
 Originally created for [OReply](http://oreply.net/),
 
